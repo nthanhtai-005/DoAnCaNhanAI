@@ -48,3 +48,11 @@ Giải pháp là chuỗi các hành động hoặc trạng thái từ trạng th
 - Thuật toán A* là một trong những lựa chọn tối ưu cho bài toán 8-puzzle nhờ khả năng kết hợp hiệu quả giữa chi phí đã đi và chi phí ước lượng còn lại. Khi sử dụng hàm heuristic phù hợp, A* có thể tìm ra lời giải tối ưu với hiệu suất cao.
 - Greedy Best-First Search có ưu điểm là tốc độ thực thi nhanh vì chỉ tập trung vào trạng thái có ước lượng gần đích nhất. Tuy nhiên, do bỏ qua chi phí đã đi nên thuật toán này không đảm bảo tìm được lời giải tối ưu và dễ bị lạc hướng trong không gian trạng thái rộng hoặc có nhiều nhánh sai.
 - IDA* là một lựa chọn thay thế hợp lý khi tài nguyên bộ nhớ bị hạn chế. Nó vẫn đảm bảo tìm được lời giải tối ưu nhưng cần nhiều thời gian hơn do phải thực hiện tìm kiếm lặp lại với ngưỡng chi phí tăng dần.
+### Constraint Satisfaction Problems (Bài toán thỏa mãn ràng buộc)
+Một bài toán CSP được mô hình hóa bởi 3 thành phần chính:
+- Biến (Variables)
+Là các đối tượng cần gán giá trị. Gọi là X1, X2, ..., Xn.
+- Miền giá trị (Domains)
+Tập giá trị khả dĩ của từng biến. Ví dụ: D1 = {1,2,3} với biến X1.
+- Ràng buộc (Constraints)
+Các điều kiện giới hạn tổ hợp các giá trị được gán cho các biến.
