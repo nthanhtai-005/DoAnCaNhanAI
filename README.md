@@ -23,7 +23,7 @@ Xác định xem trạng thái hiện tại có phải là trạng thái đích 
 Xác định chi phí để thực hiện một bước chuyển từ trạng thái này sang trạng thái khác.
 - Giải pháp (Solution):
 Là một chuỗi các hành động hoặc trạng thái dẫn từ trạng thái khởi đầu đến trạng thái đích. Đây là kết quả mà thuật toán tìm kiếm trả về khi tìm được đường đi thỏa mãn yêu cầu bài toán.
-![UninformedSearchAlgorithms](https://github.com/user-attachments/assets/07168c8f-68ac-49dd-827f-44789f2184d1)
+![IUninformedSearchAlgorithms](https://github.com/user-attachments/assets/ff993811-a1fa-4ab1-8119-d068dd65c84c)
 ### Nhận xét
 - BFS có thể thăm rất nhiều trạng thái, đặc biệt là trong các bài toán có không gian trạng thái rộng và sâu. Tuy nhiên, nó đảm bảo tìm được giải pháp tối ưu nếu có giải pháp, nhưng thời gian thực thi sẽ chậm khi độ sâu của giải pháp lớn, vì phải lưu trữ tất cả các trạng thái đã thăm.
 - DFS có thể thăm ít trạng thái hơn trong một số trường hợp, đặc biệt khi giải pháp gần gốc, nhưng không thể đảm bảo tìm được giải pháp tối ưu và có thể rơi vào tình trạng không kết thúc nếu không có giải pháp. Thời gian thực thi có thể nhanh trong một số trường hợp, nhưng dễ gặp phải vòng lặp và thiếu tính ổn định trong việc tìm giải pháp.
