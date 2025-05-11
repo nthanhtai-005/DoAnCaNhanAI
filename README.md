@@ -25,7 +25,7 @@ Xác định chi phí để thực hiện một bước chuyển từ trạng th
 Là một chuỗi các hành động hoặc trạng thái dẫn từ trạng thái khởi đầu đến trạng thái đích. Đây là kết quả mà thuật toán tìm kiếm trả về khi tìm được đường đi thỏa mãn yêu cầu bài toán.
 ![UninformedSearchAlgorithms](https://github.com/user-attachments/assets/07168c8f-68ac-49dd-827f-44789f2184d1)
 ### Nhận xét
-- BFS: Thời gian thực thi chậm trong bài toán 8-puzzle khi độ sâu giải pháp lớn, vì cần lưu trữ tất cả các trạng thái đã thăm.
-- DFS: Có thể nhanh trong một số trường hợp (giải pháp gần gốc), nhưng không đảm bảo tìm giải pháp tối ưu và dễ gặp phải vòng lặp.
-- UCS: Tìm ra giải pháp tối ưu nhưng tốn thời gian và bộ nhớ hơn vì phải xử lý các trạng thái theo chi phí.
-- IDS: Tiết kiệm bộ nhớ nhưng tốn thời gian do phải kiểm tra lại trạng thái ở mỗi độ sâu.
+- BFS có thể thăm rất nhiều trạng thái, đặc biệt là trong các bài toán có không gian trạng thái rộng và sâu. Tuy nhiên, nó đảm bảo tìm được giải pháp tối ưu nếu có giải pháp, nhưng thời gian thực thi sẽ chậm khi độ sâu của giải pháp lớn, vì phải lưu trữ tất cả các trạng thái đã thăm.
+- DFS có thể thăm ít trạng thái hơn trong một số trường hợp, đặc biệt khi giải pháp gần gốc, nhưng không thể đảm bảo tìm được giải pháp tối ưu và có thể rơi vào tình trạng không kết thúc nếu không có giải pháp. Thời gian thực thi có thể nhanh trong một số trường hợp, nhưng dễ gặp phải vòng lặp và thiếu tính ổn định trong việc tìm giải pháp.
+- UCS có thể thăm nhiều trạng thái hơn BFS vì phải kiểm tra các trạng thái có chi phí thấp nhất trước, nhưng lại đảm bảo tìm được giải pháp tối ưu. Tuy nhiên, UCS tốn thời gian và bộ nhớ hơn so với BFS, vì phải xử lý và lưu trữ các trạng thái theo chi phí của chúng.
+- IDS có thể thăm ít trạng thái hơn BFS hoặc UCS vì chỉ duyệt qua các độ sâu một lần, nhưng lại thăm lại các trạng thái ở các độ sâu thấp nhiều lần, điều này làm tăng số lượng trạng thái đã thăm trong trường hợp độ sâu của bài toán lớn. Mặc dù IDS tiết kiệm bộ nhớ, nhưng thời gian thực thi có thể tốn kém do phải kiểm tra lại các trạng thái ở mỗi độ sâu.
