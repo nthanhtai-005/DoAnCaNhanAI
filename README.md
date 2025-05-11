@@ -29,3 +29,17 @@ Là một chuỗi các hành động hoặc trạng thái dẫn từ trạng th�
 - DFS có thể thăm ít trạng thái hơn trong một số trường hợp, đặc biệt khi giải pháp gần gốc, nhưng không thể đảm bảo tìm được giải pháp tối ưu và có thể rơi vào tình trạng không kết thúc nếu không có giải pháp. Thời gian thực thi có thể nhanh trong một số trường hợp, nhưng dễ gặp phải vòng lặp và thiếu tính ổn định trong việc tìm giải pháp.
 - UCS có thể thăm nhiều trạng thái hơn BFS vì phải kiểm tra các trạng thái có chi phí thấp nhất trước, nhưng lại đảm bảo tìm được giải pháp tối ưu. Tuy nhiên, UCS tốn thời gian và bộ nhớ hơn so với BFS, vì phải xử lý và lưu trữ các trạng thái theo chi phí của chúng.
 - IDS có thể thăm ít trạng thái hơn BFS hoặc UCS vì chỉ duyệt qua các độ sâu một lần, nhưng lại thăm lại các trạng thái ở các độ sâu thấp nhiều lần, điều này làm tăng số lượng trạng thái đã thăm trong trường hợp độ sâu của bài toán lớn. Mặc dù IDS tiết kiệm bộ nhớ, nhưng thời gian thực thi có thể tốn kém do phải kiểm tra lại các trạng thái ở mỗi độ sâu.
+### Informed Search Algorithms (Thuật toán tìm kiếm có thông tin)
+Một bài toán tìm kiếm có thể được mô tả qua một số thành phần cơ bản sau:
+- Trạng thái ban đầu (Initial state):
+Đây là trạng thái xuất phát của bài toán, tức là điểm bắt đầu mà thuật toán tìm kiếm sẽ bắt đầu tìm kiếm từ đó.
+- Trạng thái đích (Goal state):
+Đây là trạng thái hoặc tập hợp các trạng thái mà thuật toán cần tìm tới. Trạng thái đích là mục tiêu của quá trình tìm kiếm.
+- Hành động (Actions):
+Các hành động là những phép biến đổi hoặc di chuyển giúp chuyển từ trạng thái này sang trạng thái khác. Hành động có thể được xác định bởi các quy tắc hoặc điều kiện cụ thể trong bài toán.
+- Hàm chi phí (Cost function):
+Hàm chi phí xác định mức độ tốn kém của mỗi hành động. Nó có thể là chi phí thực tế của việc di chuyển từ trạng thái này sang trạng thái khác, hoặc có thể tính toán theo một hệ thống điểm nào đó. Hàm chi phí giúp thuật toán đánh giá các lựa chọn hành động một cách có tổ chức.
+- Hàm kiểm tra trạng thái đích (Goal test):
+Hàm này có nhiệm vụ kiểm tra xem trạng thái hiện tại có phải là trạng thái đích hay không. Nếu trạng thái hiện tại là trạng thái đích, thuật toán sẽ kết thúc quá trình tìm kiếm và đưa ra kết quả.
+- Giải pháp (Solution):
+Giải pháp là chuỗi các hành động hoặc trạng thái từ trạng thái ban đầu đến trạng thái đích, thỏa mãn yêu cầu của bài toán tìm kiếm. Trong một số bài toán, có thể có nhiều giải pháp khác nhau, nhưng trong trường hợp thuật toán tìm kiếm hiệu quả, giải pháp thường là tối ưu hoặc gần tối ưu.
