@@ -43,3 +43,7 @@ Hàm chi phí xác định mức độ tốn kém của mỗi hành động. Nó
 Hàm này có nhiệm vụ kiểm tra xem trạng thái hiện tại có phải là trạng thái đích hay không. Nếu trạng thái hiện tại là trạng thái đích, thuật toán sẽ kết thúc quá trình tìm kiếm và đưa ra kết quả.
 - Giải pháp (Solution):
 Giải pháp là chuỗi các hành động hoặc trạng thái từ trạng thái ban đầu đến trạng thái đích, thỏa mãn yêu cầu của bài toán tìm kiếm. Trong một số bài toán, có thể có nhiều giải pháp khác nhau, nhưng trong trường hợp thuật toán tìm kiếm hiệu quả, giải pháp thường là tối ưu hoặc gần tối ưu.
+### Nhận xét
+- Thuật toán A* là một trong những lựa chọn tối ưu cho bài toán 8-puzzle nhờ khả năng kết hợp hiệu quả giữa chi phí đã đi và chi phí ước lượng còn lại. Khi sử dụng hàm heuristic phù hợp, A* có thể tìm ra lời giải tối ưu với hiệu suất cao.
+- Greedy Best-First Search có ưu điểm là tốc độ thực thi nhanh vì chỉ tập trung vào trạng thái có ước lượng gần đích nhất. Tuy nhiên, do bỏ qua chi phí đã đi nên thuật toán này không đảm bảo tìm được lời giải tối ưu và dễ bị lạc hướng trong không gian trạng thái rộng hoặc có nhiều nhánh sai.
+- IDA* là một lựa chọn thay thế hợp lý khi tài nguyên bộ nhớ bị hạn chế. Nó vẫn đảm bảo tìm được lời giải tối ưu nhưng cần nhiều thời gian hơn do phải thực hiện tìm kiếm lặp lại với ngưỡng chi phí tăng dần.
