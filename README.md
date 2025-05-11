@@ -25,7 +25,7 @@ Xác định chi phí để thực hiện một bước chuyển từ trạng th
 Là một chuỗi các hành động hoặc trạng thái dẫn từ trạng thái khởi đầu đến trạng thái đích. Đây là kết quả mà thuật toán tìm kiếm trả về khi tìm được đường đi thỏa mãn yêu cầu bài toán.
 ![UninformedSearchAlgorithms](https://github.com/user-attachments/assets/07168c8f-68ac-49dd-827f-44789f2184d1)
 ### Nhận xét
-- BFS có thể chạy lâu hơn trong các bài toán có độ sâu lớn vì phải duyệt qua tất cả các trạng thái trong từng tầng.
-- DFS có thể nhanh hơn trong các trường hợp giải pháp nằm gần gốc, nhưng không đảm bảo tính tối ưu.
-- UCS có thể tìm ra giải pháp tối ưu, nhưng cần nhiều thời gian xử lý do phải duyệt qua các trạng thái theo chi phí.
-- IDS giảm thiểu bộ nhớ, nhưng sẽ mất nhiều thời gian hơn do phải kiểm tra lại trạng thái ở mỗi độ sâu.
+- BFS: Thời gian thực thi chậm trong bài toán 8-puzzle khi độ sâu giải pháp lớn, vì cần lưu trữ tất cả các trạng thái đã thăm.
+- DFS: Có thể nhanh trong một số trường hợp (giải pháp gần gốc), nhưng không đảm bảo tìm giải pháp tối ưu và dễ gặp phải vòng lặp.
+- UCS: Tìm ra giải pháp tối ưu nhưng tốn thời gian và bộ nhớ hơn vì phải xử lý các trạng thái theo chi phí.
+- IDS: Tiết kiệm bộ nhớ nhưng tốn thời gian do phải kiểm tra lại trạng thái ở mỗi độ sâu.
