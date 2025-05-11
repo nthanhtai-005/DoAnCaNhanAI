@@ -23,3 +23,4 @@ Xác định xem trạng thái hiện tại có phải là trạng thái đích 
 Xác định chi phí để thực hiện một bước chuyển từ trạng thái này sang trạng thái khác.
 - Giải pháp (Solution):
 Là một chuỗi các hành động hoặc trạng thái dẫn từ trạng thái khởi đầu đến trạng thái đích. Đây là kết quả mà thuật toán tìm kiếm trả về khi tìm được đường đi thỏa mãn yêu cầu bài toán.
+![UninformedSearchAlgorithms](https://github.com/user-attachments/assets/07168c8f-68ac-49dd-827f-44789f2184d1)
