@@ -69,6 +69,37 @@ Là thuật toán tìm kiếm cục bộ (local search), thường dùng cho bà
 - Ưu điểm: Hiệu quả với bài toán có không gian trạng thái lớn, không cần quay lui.
 - Nhược điểm: Không đảm bảo tìm được lời giải nếu bị mắc kẹt tại cực trị cục bộ, không áp dụng tốt cho bài toán có ít hoặc không có lời giải.
 ![ConstraintSatisfactionProblems](https://github.com/user-attachments/assets/61e31eed-8652-4000-b906-19e4a17cbba1)
+### Tìm kiếm Cục bộ (Local Search Algorithms)
+Local Search là một phương pháp tìm kiếm không khám phá toàn bộ không gian trạng thái, mà chỉ tập trung vào việc cải thiện nghiệm hiện tại bằng cách di chuyển đến trạng thái lân cận tốt hơn. Phù hợp với các bài toán tối ưu hóa và khi không cần biết rõ trạng thái đích, chỉ cần tìm một nghiệm "tốt".
+#### Simple Hill Climbing
+- Di chuyển đến trạng thái lân cận đầu tiên tốt hơn trạng thái hiện tại.
+- Nếu không có trạng thái lân cận nào tốt hơn, thuật toán sẽ dừng lại (rơi vào cực trị cục bộ).
+- Ưu điểm: Dễ hiểu, dễ triển khai.
+- Nhược điểm: Dễ bị kẹt ở điểm cực trị cục bộ, không xét tất cả lân cận, nên dễ bỏ lỡ nghiệm tốt hơn.
+#### Steepest Ascent Hill Climbing
+- Xét tất cả các trạng thái lân cận và chọn trạng thái có giá trị tốt nhất để di chuyển.
+- Ưu điểm: Tìm được hướng đi tốt nhất trong mỗi bước.
+- Nhược điểm: Tốn thời gian hơn so với Simple Hill Climbing, vẫn có nguy cơ rơi vào cực trị cục bộ.
+#### Stochastic Hill Climbing
+- Thay vì chọn lân cận tốt nhất, thuật toán chọn ngẫu nhiên một lân cận tốt hơn để tránh rơi vào các điểm cực trị cục bộ quá sớm.
+- Ưu điểm: Giảm xác suất kẹt ở cực trị cục bộ, dễ triển khai.
+- Nhược điểm: Kết quả có thể không ổn định, không đảm bảo luôn tìm được nghiệm tối ưu.
+#### Beam Search
+- Giữ k trạng thái tốt nhất tại mỗi bước (thay vì 1 trạng thái như Hill Climbing).
+- Ưu điểm: Khám phá được nhiều hướng đi cùng lúc, dễ mở rộng và song song hóa.
+- Nhược điểm: Tốn nhiều bộ nhớ hơn, nếu k nhỏ, dễ bỏ qua hướng đi tối ưu.
+#### Simulated Annealing
+- Cho phép di chuyển đến trạng thái kém hơn một cách ngẫu nhiên, với xác suất giảm dần theo thời gian (theo "nhiệt độ").
+- Ưu điểm: Có khả năng thoát khỏi cực trị cục bộ, hiệu quả cho các bài toán tối ưu phức tạp.
+- Nhược điểm: Cần điều chỉnh tham số “nhiệt độ” phù hợp, chậm khi nhiệt độ giảm quá thấp.
+#### Genetic Algorithm
+- Mô phỏng quá trình tiến hóa tự nhiên:
+- Khởi tạo quần thể cá thể ngẫu nhiên.
+- Lựa chọn, lai ghép, đột biến để tạo cá thể mới.
+- Lặp lại qua nhiều thế hệ để cải thiện chất lượng nghiệm.
+- Ưu điểm: Khả năng tìm kiếm toàn cục cao, tốt cho bài toán có không gian trạng thái lớn và phức tạp.
+- Nhược điểm: Cần điều chỉnh nhiều tham số (tỷ lệ lai, tỷ lệ đột biến…), tốn thời gian và tài nguyên.
+![LocalSearchAlgorithms](https://github.com/user-attachments/assets/5ce44d23-06a6-4351-b5f4-9eeee159717e)
 ### Tìm kiếm trong Môi trường Phức tạp (Searching in Complex Environments)
 Khi giải quyết các bài toán trong môi trường phức tạp, thuật toán tìm kiếm không chỉ cần xử lý không gian trạng thái lớn mà còn phải đối phó với tình huống quan sát không đầy đủ hoặc cấu trúc mạng phức tạp. Các thuật toán tìm kiếm trong môi trường phức tạp cung cấp phương pháp để lập kế hoạch và tìm kiếm hiệu quả trong những môi trường không chắc chắn và phức tạp.
 #### AND-OR Graph Search
