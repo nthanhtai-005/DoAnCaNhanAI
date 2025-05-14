@@ -50,8 +50,8 @@ Khi giải quyết các bài toán trong môi trường phức tạp, thuật to
 #### AND-OR Graph Search
 - AND-OR Graph Search được sử dụng trong các bài toán có cấu trúc AND-OR, nơi một trạng thái có thể yêu cầu kết hợp các hành động (AND) hoặc lựa chọn giữa các hành động (OR).
 - Quy trình:
--- AND: Tất cả các hành động trong nhánh phải được thực hiện để đạt được mục tiêu.
--- OR: Chỉ cần thực hiện một trong các hành động có thể để đạt được mục tiêu.
+AND: Tất cả các hành động trong nhánh phải được thực hiện để đạt được mục tiêu.
+OR: Chỉ cần thực hiện một trong các hành động có thể để đạt được mục tiêu.
 - Ứng dụng: Được sử dụng trong các bài toán quyết định như lập kế hoạch hành động với các lựa chọn thay thế (choices).
 - Ưu điểm: Có thể mô tả các bài toán phức tạp với các lựa chọn thay thế hoặc sự kết hợp hành động.
 - Nhược điểm: Tìm kiếm phức tạp hơn, cần sử dụng cấu trúc đồ thị đặc biệt.
