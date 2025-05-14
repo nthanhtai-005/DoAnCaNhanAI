@@ -49,9 +49,18 @@ Thuật toán tìm kiếm có thông tin là nhóm thuật toán sử dụng th�
 Khi giải quyết các bài toán trong môi trường phức tạp, thuật toán tìm kiếm không chỉ cần xử lý không gian trạng thái lớn mà còn phải đối phó với tình huống quan sát không đầy đủ hoặc cấu trúc mạng phức tạp. Các thuật toán tìm kiếm trong môi trường phức tạp cung cấp phương pháp để lập kế hoạch và tìm kiếm hiệu quả trong những môi trường không chắc chắn và phức tạp.
 #### AND-OR Graph Search
 - AND-OR Graph Search được sử dụng trong các bài toán có cấu trúc AND-OR, nơi một trạng thái có thể yêu cầu kết hợp các hành động (AND) hoặc lựa chọn giữa các hành động (OR).
-- Quy trình:
-AND: Tất cả các hành động trong nhánh phải được thực hiện để đạt được mục tiêu.
-OR: Chỉ cần thực hiện một trong các hành động có thể để đạt được mục tiêu.
+- Quy trình: AND: Tất cả các hành động trong nhánh phải được thực hiện để đạt được mục tiêu. OR: Chỉ cần thực hiện một trong các hành động có thể để đạt được mục tiêu.
 - Ứng dụng: Được sử dụng trong các bài toán quyết định như lập kế hoạch hành động với các lựa chọn thay thế (choices).
 - Ưu điểm: Có thể mô tả các bài toán phức tạp với các lựa chọn thay thế hoặc sự kết hợp hành động.
 - Nhược điểm: Tìm kiếm phức tạp hơn, cần sử dụng cấu trúc đồ thị đặc biệt.
+#### Searching for a Partially Observable Environment
+Bài toán tìm kiếm trong môi trường quan sát một phần là khi một hệ thống không thể quan sát đầy đủ mọi trạng thái của môi trường, ví dụ trong các hệ thống robot tự động hoặc hệ thống trí tuệ nhân tạo với dữ liệu đầu vào bị giới hạn.
+- Cách tiếp cận: Partially Observable Markov Decision Process (POMDP): Đây là một mô hình quyết định trong môi trường không hoàn toàn quan sát được, giúp mô tả các hành động và quyết định trong môi trường có thông tin không đầy đủ, heuristic-based search: Sử dụng các chiến lược dự đoán thông qua các yếu tố như cảm biến hoặc dữ liệu lịch sử.
+- Ưu điểm: Hữu ích trong các ứng dụng AI thực tế, nơi không thể có thông tin đầy đủ về trạng thái môi trường, dễ dàng áp dụng trong các bài toán robot và tự động hóa.
+- Nhược điểm: Tính toán phức tạp do môi trường không thể quan sát toàn diện, cần các mô hình xác suất phức tạp.
+#### Sensorless Search
+Sensorless Search là thuật toán tìm kiếm được áp dụng trong các bài toán mà hệ thống không có khả năng cảm biến để quan sát trực tiếp trạng thái hiện tại của môi trường. Thay vì sử dụng cảm biến trực tiếp, thuật toán dựa vào các giả thuyết hoặc ước lượng để tiên đoán trạng thái môi trường.
+- Cách hoạt động: Thuật toán dựa vào các dự đoán từ thông tin lịch sử và các hành động đã thực hiện trước đó để ước lượng trạng thái hiện tại, thường được sử dụng trong bài toán robot tự hành khi không thể có thông tin trực tiếp từ cảm biến.
+- Ưu điểm: Hiệu quả trong môi trường không có cảm biến hoặc khi việc sử dụng cảm biến là không khả thi, giảm bớt phụ thuộc vào phần cứng cảm biến.
+- Nhược điểm: Khó khăn trong việc duy trì độ chính xác cao trong suốt quá trình tìm kiếm, ddễ gặp phải lỗi khi dự đoán sai trạng thái.
+
