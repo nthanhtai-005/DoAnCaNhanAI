@@ -44,3 +44,14 @@ Thuật toán tìm kiếm có thông tin là nhóm thuật toán sử dụng th�
 - Kết hợp giữa chi phí thực tế g(n) và ước lượng đến đích h(n).
 - Sử dụng hàng đợi ưu tiên theo giá trị f(n).
 - Ưu điểm: Tìm được lời giải tối ưu nếu heuristic là admissibkhông đảm bảo tối ưu nếu beam width quá nhỏ
+
+### Tìm kiếm trong Môi trường Phức tạp (Searching in Complex Environments)
+Khi giải quyết các bài toán trong môi trường phức tạp, thuật toán tìm kiếm không chỉ cần xử lý không gian trạng thái lớn mà còn phải đối phó với tình huống quan sát không đầy đủ hoặc cấu trúc mạng phức tạp. Các thuật toán tìm kiếm trong môi trường phức tạp cung cấp phương pháp để lập kế hoạch và tìm kiếm hiệu quả trong những môi trường không chắc chắn và phức tạp.
+#### AND-OR Graph Search
+- AND-OR Graph Search được sử dụng trong các bài toán có cấu trúc AND-OR, nơi một trạng thái có thể yêu cầu kết hợp các hành động (AND) hoặc lựa chọn giữa các hành động (OR).
+- Quy trình:
+-- AND: Tất cả các hành động trong nhánh phải được thực hiện để đạt được mục tiêu.
+-- OR: Chỉ cần thực hiện một trong các hành động có thể để đạt được mục tiêu.
+- Ứng dụng: Được sử dụng trong các bài toán quyết định như lập kế hoạch hành động với các lựa chọn thay thế (choices).
+- Ưu điểm: Có thể mô tả các bài toán phức tạp với các lựa chọn thay thế hoặc sự kết hợp hành động.
+- Nhược điểm: Tìm kiếm phức tạp hơn, cần sử dụng cấu trúc đồ thị đặc biệt.
