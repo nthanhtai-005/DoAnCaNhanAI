@@ -45,6 +45,24 @@ Thuật toán tìm kiếm có thông tin là nhóm thuật toán sử dụng th�
 - Sử dụng hàng đợi ưu tiên theo giá trị f(n).
 - Ưu điểm: Tìm được lời giải tối ưu nếu heuristic là admissibkhông đảm bảo tối ưu nếu beam width quá nhỏ
 
+### Bài toán Thỏa mãn Ràng buộc (Constraint Satisfaction Problems - CSP)
+Bài toán thỏa mãn ràng buộc (CSP) là bài toán trong đó lời giải là một tập hợp các giá trị gán cho một số biến sao cho mọi ràng buộc (constraints) đều được thỏa mãn.
+#### Backtracking (Tìm kiếm quay lui)
+- Là phương pháp cơ bản nhất: thử từng giá trị khả dĩ cho từng biến theo thứ tự, kiểm tra ràng buộc, và quay lui nếu có xung đột.
+- Quy trình: Gán giá trị cho biến đầu tiên. Kiểm tra các ràng buộc. Nếu hợp lệ → tiếp tục với biến kế tiếp. Nếu không hợp lệ → quay lui và thử giá trị khác.
+- Ưu điểm: Dễ cài đặt, hiệu quả cho các bài toán nhỏ.
+- Nhược điểm: Tốn thời gian với không gian tìm kiếm lớn, hông tận dụng nhiều thông tin về ràng buộc trong quá trình tìm kiếm.
+#### Forward Checking (Dự đoán trước)
+- Là cải tiến của Backtracking. Khi gán giá trị cho một biến, thuật toán loại bỏ các giá trị không hợp lệ khỏi miền của các biến chưa gán.
+- Cách hoạt động: Mỗi khi gán một giá trị cho biến, kiểm tra xem liệu ràng buộc với các biến còn lại có làm miền của chúng rỗng hay không.
+- Ưu điểm: Giảm số lượng nhánh vô ích, tăng tốc độ tìm kiếm bằng cách phát hiện xung đột sớm.
+- Nhược điểm: Cần thêm chi phí để duy trì miền biến cập nhật.
+#### Min-Conflicts (Giải thuật xung đột tối thiểu)
+Là thuật toán tìm kiếm cục bộ (local search), thường dùng cho bài toán có lời giải lớn như giải ô chữ, Sudoku, n-queens.
+- Cách hoạt động: Khởi tạo gán giá trị ngẫu nhiên. Tại mỗi bước, chọn biến đang vi phạm ràng buộc. Gán lại giá trị cho biến đó sao cho số lượng ràng buộc bị vi phạm là ít nhất. Lặp lại cho đến khi không còn xung đột.
+- Ưu điểm: Hiệu quả với bài toán có không gian trạng thái lớn, không cần quay lui.
+- Nhược điểm: Không đảm bảo tìm được lời giải nếu bị mắc kẹt tại cực trị cục bộ, không áp dụng tốt cho bài toán có ít hoặc không có lời giải.
+![ConstraintSatisfactionProblems](https://github.com/user-attachments/assets/61e31eed-8652-4000-b906-19e4a17cbba1)
 ### Tìm kiếm trong Môi trường Phức tạp (Searching in Complex Environments)
 Khi giải quyết các bài toán trong môi trường phức tạp, thuật toán tìm kiếm không chỉ cần xử lý không gian trạng thái lớn mà còn phải đối phó với tình huống quan sát không đầy đủ hoặc cấu trúc mạng phức tạp. Các thuật toán tìm kiếm trong môi trường phức tạp cung cấp phương pháp để lập kế hoạch và tìm kiếm hiệu quả trong những môi trường không chắc chắn và phức tạp.
 #### AND-OR Graph Search
