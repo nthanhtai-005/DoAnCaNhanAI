@@ -2,9 +2,9 @@
 ![GiaoDien](https://github.com/user-attachments/assets/3941f0c8-044c-40de-bcfd-d297d5f7337b)
 ## 1. Mục tiêu
 ### Bài tập cá nhân này sử dụng các thuật toán tìm kiếm để giải quyết bài toán 8-puzzle. Cụ thể, đề tài tập trung vào 6 nhóm thuật toán chính:
-
 - Thuật toán tìm kiếm không có thông tin (Uninformed Search) như BFS, DFS, IDS và UCS, giúp khảo sát khả năng tìm lời giải khi không có thông tin định hướng.
 - Thuật toán tìm kiếm có thông tin (Informed Search) như A*, IDA* và Greedy Best-First Search, sử dụng heuristic để tối ưu hóa hiệu quả tìm kiếm.
+- Bài toán thỏa mãn ràng buộc (Constraint Satisfaction Problems - CSP) như Forward-Checking, Backtracking và Min-Conflicts nhằm khảo sát khả năng biểu diễn 8-puzzle dưới dạng hệ thống ràng buộc logic.
 - Tìm kiếm cục bộ (Local Search) như Hill Climbing, Steepest Ascent Hill Climbing, Simple Hill Climbing Simulated Annealing, Stochastic Hill Climbing và Beam Search tập trung vào việc cải thiện nghiệm cục bộ mà không cần duy trì toàn bộ không gian trạng thái.
 - Tìm kiếm trong môi trường phức tạp (Searching in Complex Environments) như AND-OR Graph Search, Searching for a partially observation, Sensorless mở rộng khả năng ứng dụng sang các bài toán có tính động và không chắc chắn, định hướng cho các nghiên cứu nâng cao.
 ## 2. Nội dung
@@ -63,23 +63,82 @@ Thuật toán tìm kiếm có thông tin là nhóm thuật toán sử dụng th�
 - Nhược điểm:
 ❌ Phải duyệt lại các nút trong nhiều vòng lặp → tốn thời gian hơn A* trong một số trường hợp.
 ![IInformedSearchAlgorithms](https://github.com/user-attachments/assets/fa432c8c-baae-409c-9206-78124a9263e3)
-Một bài toán CSP được mô hình hóa bởi 3 thành phần chính:
-- Biến (Variables)
-Là các đối tượng cần gán giá trị. Gọi là X1, X2, ..., Xn.
-- Miền giá trị (Domains)
-Tập giá trị khả dĩ của từng biến. Ví dụ: D1 = {1,2,3} với biến X1.
-- Ràng buộc (Constraints)
-Các điều kiện giới hạn tổ hợp các giá trị được gán cho các biến.
+### Bài toán thỏa mãn ràng buộc (Constraint Satisfaction Problems - CSP)
+Bài toán thỏa mãn ràng buộc (CSP) là bài toán trong đó lời giải là một tập hợp các giá trị gán cho một số biến sao cho mọi ràng buộc (constraints) đều được thỏa mãn.
+#### Backtracking (Tìm kiếm quay lui)
+- Là phương pháp cơ bản nhất: thử từng giá trị khả dĩ cho từng biến theo thứ tự, kiểm tra ràng buộc, và quay lui nếu có xung đột.
+- Quy trình:
+  Gán giá trị cho biến đầu tiên.
+  Kiểm tra các ràng buộc.
+  Nếu hợp lệ → tiếp tục với biến kế tiếp.
+  Nếu không hợp lệ → quay lui và thử giá trị khác.
+- Ưu điểm:
+✔️ Dễ cài đặt, hiệu quả cho các bài toán nhỏ.
+- Nhược điểm:
+❌ Tốn thời gian với không gian tìm kiếm lớn.
+❌ Không tận dụng nhiều thông tin về ràng buộc trong quá trình tìm kiếm.
+#### Forward Checking (Dự đoán trước)
+- Là cải tiến của Backtracking. Khi gán giá trị cho một biến, thuật toán loại bỏ các giá trị không hợp lệ khỏi miền của các biến chưa gán.
+- Cách hoạt động:Mỗi khi gán một giá trị cho biến, kiểm tra xem liệu ràng buộc với các biến còn lại có làm miền của chúng rỗng hay không.
+- Ưu điểm:
+✔️ Giảm số lượng nhánh vô ích.
+✔️ Tăng tốc độ tìm kiếm bằng cách phát hiện xung đột sớm.
+- Nhược điểm:
+❌ Cần thêm chi phí để duy trì miền biến cập nhật.
+#### Min-Conflicts (Giải thuật xung đột tối thiểu)
+- Là thuật toán tìm kiếm cục bộ (local search), thường dùng cho bài toán có lời giải lớn như giải ô chữ, Sudoku, n-queens.
+- Cách hoạt động:
+  Khởi tạo gán giá trị ngẫu nhiên.
+  Tại mỗi bước, chọn biến đang vi phạm ràng buộc.
+  Gán lại giá trị cho biến đó sao cho số lượng ràng buộc bị vi phạm là ít nhất.
+  Lặp lại cho đến khi không còn xung đột.
+- Ưu điểm:
+✔️ Hiệu quả với bài toán có không gian trạng thái lớn.
+✔️ Không cần quay lui.
+- Nhược điểm:
+❌ Không đảm bảo tìm được lời giải nếu bị mắc kẹt tại cực trị cục bộ.
+❌ Không áp dụng tốt cho bài toán có ít hoặc không có lời giải.
 
 ### Tìm kiếm cục bộ (Local Search)
-Trong quá trình giải bài toán bằng tìm kiếm, ta cần xác định rõ một số thành phần cơ bản để mô hình hóa và giải quyết vấn đề một cách hiệu quả:
-- Trạng thái khởi đầu:
-Đây là điểm xuất phát, nơi hệ thống bắt đầu quá trình tìm kiếm lời giải.
-- Trạng thái mục tiêu:
-Là đích đến mà bài toán yêu cầu đạt được, thường được mô tả bằng điều kiện thỏa mãn.
-- Tập hành động:
-Bao gồm các bước hoặc thao tác có thể áp dụng để chuyển từ trạng thái hiện tại sang trạng thái mới.
-- Hàm chi phí:
-Xác định mức chi phí cần thiết để thực hiện một hành động, qua đó giúp so sánh và lựa chọn hành trình tối ưu.
-- Hàm đánh giá (Heuristic): Dùng để ước lượng khoảng cách hoặc độ phù hợp giữa trạng thái hiện tại và trạng thái mục tiêu, đặc biệt hữu ích trong các thuật toán tìm kiếm có định hướng.
-- Giải pháp: Là chuỗi các hành động (hoặc trạng thái) nối tiếp nhau từ điểm bắt đầu đến đích, sao cho thỏa mãn yêu cầu của bài toán đề ra.
+Tìm kiếm cục bộ là nhóm thuật toán dùng để tìm lời giải bằng cách cải thiện dần một trạng thái duy nhất, thay vì xây dựng toàn bộ cây tìm kiếm. Phù hợp với các bài toán có không gian trạng thái rất lớn hoặc khó biểu diễn lời giải hoàn chỉnh ngay từ đầu.
+#### Simple Hill Climbing
+- Tại mỗi bước, chuyển sang trạng thái kế cận đầu tiên tốt hơn trạng thái hiện tại.
+- Ưu điểm:
+✔️ Dễ cài đặt
+✔️ Hoạt động tốt khi có ít điểm cực trị cục bộ
+- Nhược điểm:
+❌ Dễ bị kẹt tại cực trị cục bộ
+❌ Không quan sát được toàn bộ không gian kế cận
+#### Steepest Ascent Hill Climbing
+- Ở mỗi bước, xem xét tất cả các trạng thái lân cận và chọn trạng thái có giá trị đánh giá tốt nhất.
+- Ưu điểm:
+✔️ Cải thiện hiệu quả tìm kiếm
+✔️ Giảm nguy cơ chọn nhầm bước tồi
+- Nhược điểm:
+❌ Vẫn có thể kẹt tại cực trị cục bộ hoặc điểm cao nguyên (plateau)
+#### Stochastic Hill Climbing
+- Tương tự như Hill Climbing nhưng chọn ngẫu nhiên một trạng thái tốt hơn trong số các trạng thái lân cận.
+- Ưu điểm:
+✔️ Giảm khả năng bị kẹt ở điểm cao nguyên
+✔️ Đa dạng hướng đi
+- Nhược điểm:
+❌ Không đảm bảo luôn chọn hướng tốt nhất
+❌ Kết quả có thể không ổn định
+#### Simulated Annealing
+- Cho phép di chuyển sang trạng thái kém hơn tạm thời với xác suất giảm dần theo thời gian, nhằm thoát khỏi cực trị cục bộ.
+- Cơ chế giống quá trình làm nguội kim loại (annealing).
+- Ưu điểm:
+✔️ Có khả năng tìm được lời giải toàn cục
+✔️ Tránh được bẫy cục bộ hiệu quả
+- Nhược điểm:
+❌ Hiệu suất phụ thuộc vào tham số nhiệt độ và tốc độ làm nguội
+❌ Cần điều chỉnh cẩn thận
+#### Beam Search
+- Mở rộng k nút tốt nhất ở mỗi mức thay vì một nút như Hill Climbing (k gọi là "beam width").
+- Là sự kết hợp giữa tìm kiếm theo chiều rộng và local search.
+- Ưu điểm:
+✔️ Giảm nguy cơ mắc kẹt tại cực trị
+✔️ Có thể mở rộng với nhiều luồng song song
+- Nhược điểm:
+❌ Tốn tài nguyên hơn
+❌ Không đảm bảo tối ưu nếu beam width quá nhỏ
