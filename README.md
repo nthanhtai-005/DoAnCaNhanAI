@@ -44,7 +44,13 @@ Thuật toán tìm kiếm có thông tin là nhóm thuật toán sử dụng th�
 - Kết hợp giữa chi phí thực tế g(n) và ước lượng đến đích h(n).
 - Sử dụng hàng đợi ưu tiên theo giá trị f(n).
 - Ưu điểm: Tìm được lời giải tối ưu nếu heuristic là admissibkhông đảm bảo tối ưu nếu beam width quá nhỏ
-
+#### Iterative Deepening A - IDA*
+- Là phiên bản tiết kiệm bộ nhớ của A*.
+- Duyệt theo chiều sâu với ngưỡng f(n) tăng dần (thay vì độ sâu như IDS).
+- Mỗi vòng lặp DFS chỉ mở rộng các nút có f(n) không vượt quá ngưỡng hiện tại.
+- Ưu điểm: Tìm lời giải tối ưu như A*, tiết kiệm bộ nhớ hơn vì không cần lưu toàn bộ cây.
+- Nhược điểm: Phải duyệt lại các nút trong nhiều vòng lặp → tốn thời gian hơn A* trong một số trường hợp.
+![InformedSearchAlgorithms](https://github.com/user-attachments/assets/579d6088-8e12-4f8a-80a1-2a62f3e40af5)
 ### Bài toán Thỏa mãn Ràng buộc (Constraint Satisfaction Problems - CSP)
 Bài toán thỏa mãn ràng buộc (CSP) là bài toán trong đó lời giải là một tập hợp các giá trị gán cho một số biến sao cho mọi ràng buộc (constraints) đều được thỏa mãn.
 #### Backtracking (Tìm kiếm quay lui)
