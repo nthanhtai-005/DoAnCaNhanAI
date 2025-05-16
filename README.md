@@ -118,4 +118,4 @@ Sensorless Search là thuật toán tìm kiếm được áp dụng trong các b
 - Cách hoạt động: Thuật toán dựa vào các dự đoán từ thông tin lịch sử và các hành động đã thực hiện trước đó để ước lượng trạng thái hiện tại, thường được sử dụng trong bài toán robot tự hành khi không thể có thông tin trực tiếp từ cảm biến.
 - Ưu điểm: Hiệu quả trong môi trường không có cảm biến hoặc khi việc sử dụng cảm biến là không khả thi, giảm bớt phụ thuộc vào phần cứng cảm biến.
 - Nhược điểm: Khó khăn trong việc duy trì độ chính xác cao trong suốt quá trình tìm kiếm, ddễ gặp phải lỗi khi dự đoán sai trạng thái.
-
+![SearchinginComplexEnvironments](https://github.com/user-attachments/assets/bb837d01-fcb5-4281-8287-933def4269d0)
