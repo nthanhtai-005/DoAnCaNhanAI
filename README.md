@@ -129,11 +129,13 @@ Quy trình hoạt động:
 - Chọn hành động a tại trạng thái s theo chiến lược ε-greedy.
 - Thực hiện hành động, nhận phần thưởng r và trạng thái kế tiếp s'.
 - Cập nhật Q(s, a) bằng công thức trên.
-- Chuyển sang trạng thái mới s'.  
+- Chuyển sang trạng thái mới s'.
+  
 Ưu điểm:  
 - Đơn giản, dễ cài đặt.
 - Hiệu quả trong môi trường có không gian trạng thái hữu hạn.
-- Không cần mô hình môi trường.  
+- Không cần mô hình môi trường.
+  
 Nhược điểm:  
 - Q-table không hiệu quả cho môi trường có không gian trạng thái lớn hoặc liên tục (→ cần Deep Q-Learning).
 - Hiệu suất phụ thuộc vào chiến lược chọn hành động và tham số học.
