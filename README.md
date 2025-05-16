@@ -139,3 +139,4 @@ Quy trình hoạt động:
 Nhược điểm:  
 - Q-table không hiệu quả cho môi trường có không gian trạng thái lớn hoặc liên tục (→ cần Deep Q-Learning).
 - Hiệu suất phụ thuộc vào chiến lược chọn hành động và tham số học.
+![ReinforcementLearning](https://github.com/user-attachments/assets/4c8c4a25-9ea1-42c0-a948-ae1ccf77a762)
