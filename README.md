@@ -7,6 +7,7 @@
 - Bài toán thỏa mãn ràng buộc (Constraint Satisfaction Problems - CSP) như Forward-Checking, Backtracking và Min-Conflicts nhằm khảo sát khả năng biểu diễn 8-puzzle dưới dạng hệ thống ràng buộc logic.
 - Tìm kiếm cục bộ (Local Search) như Simple Hill Climbing, Steepest Ascent Hill Climbing, Stochastic Hill Climbing và Beam Search, Simulated Annealing, Genetic Algorithm tập trung vào việc cải thiện nghiệm cục bộ mà không cần duy trì toàn bộ không gian trạng thái.
 - Tìm kiếm trong môi trường phức tạp (Searching in Complex Environments) như AND-OR Graph Search, Searching for a partially observation, Sensorless mở rộng khả năng ứng dụng sang các bài toán có tính động và không chắc chắn, định hướng cho các nghiên cứu nâng cao.
+- Học Tăng cường (Reinforcement Learning) như Q-Learning. Mô hình hóa quá trình học thông qua tương tác giữa tác nhân (agent) và môi trường (environment). Q-Learning giúp tác nhân tối đa hóa phần thưởng tích lũy bằng cách học chính sách tối ưu từ kinh nghiệm, không cần mô hình môi trường.
 ## 2. Nội dung
 ### Thuật toán Tìm kiếm Không Thông tin (Uninformed Search Algorithms)
 Thuật toán tìm kiếm không thông tin là nhóm thuật toán không sử dụng bất kỳ thông tin nào về đích hoặc khoảng cách đến đích trong quá trình tìm kiếm. Chúng chỉ dựa vào cấu trúc của không gian trạng thái để tìm kiếm lời giải.
@@ -139,4 +140,4 @@ Quy trình hoạt động:
 Nhược điểm:  
 - Q-table không hiệu quả cho môi trường có không gian trạng thái lớn hoặc liên tục (→ cần Deep Q-Learning).
 - Hiệu suất phụ thuộc vào chiến lược chọn hành động và tham số học.
-![ReinforcementLearning](https://github.com/user-attachments/assets/4c8c4a25-9ea1-42c0-a948-ae1ccf77a762)
+![ReinforcementLearning](https://github.com/user-attachments/assets/e178dfcb-ab5f-4bce-922f-b23e0bd6138f)
