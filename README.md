@@ -119,3 +119,21 @@ Sensorless Search là thuật toán tìm kiếm được áp dụng trong các b
 - Ưu điểm: Hiệu quả trong môi trường không có cảm biến hoặc khi việc sử dụng cảm biến là không khả thi, giảm bớt phụ thuộc vào phần cứng cảm biến.
 - Nhược điểm: Khó khăn trong việc duy trì độ chính xác cao trong suốt quá trình tìm kiếm, ddễ gặp phải lỗi khi dự đoán sai trạng thái.
 ![SearchinginComplexEnvironments](https://github.com/user-attachments/assets/bb837d01-fcb5-4281-8287-933def4269d0)
+### Học tăng cường (Reinforcement Learning)
+Reinforcement Learning (Học tăng cường) là một phương pháp học máy trong đó tác nhân (agent) học cách hành động trong môi trường bằng cách tương tác và nhận phản hồi (reward). Mục tiêu của tác nhân là tối đa hóa phần thưởng tích lũy theo thời gian.
+#### Q-Learning
+Q-Learning là một thuật toán học tăng cường không cần mô hình môi trường (model-free). Nó sử dụng bảng Q (Q-table) để ước lượng giá trị hành động tại mỗi trạng thái.
+Quy trình hoạt động:
+- Khởi tạo Q-table với các giá trị bằng 0 hoặc ngẫu nhiên.
+- Lặp lại cho đến khi đạt điều kiện dừng:
+- Chọn hành động a tại trạng thái s theo chiến lược ε-greedy.
+- Thực hiện hành động, nhận phần thưởng r và trạng thái kế tiếp s'.
+- Cập nhật Q(s, a) bằng công thức trên.
+- Chuyển sang trạng thái mới s'.
+Ưu điểm:
+- Đơn giản, dễ cài đặt.
+- Hiệu quả trong môi trường có không gian trạng thái hữu hạn.
+- Không cần mô hình môi trường.
+Nhược điểm:
+- Q-table không hiệu quả cho môi trường có không gian trạng thái lớn hoặc liên tục (→ cần Deep Q-Learning).
+- Hiệu suất phụ thuộc vào chiến lược chọn hành động và tham số học.
